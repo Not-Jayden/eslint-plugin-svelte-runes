@@ -1,0 +1,11 @@
+{
+  "name": "svelte-restricted-imports",
+  "main": "./src/index.js",
+  "dependencies": {
+    "eslint-plugin-svelte-restricted-imports": "link:/Users/jayden/Documents/projects/svelte-restricted-import/src"
+  },
+  "devDependencies": {
+    "eslint": "8.52.0",
+    "typescript": "5.2.2"
+  }
+}
