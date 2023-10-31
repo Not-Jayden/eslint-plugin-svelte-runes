@@ -2,7 +2,7 @@ import { Rule } from "eslint";
 import { existsSync } from "fs";
 import { dirname, resolve } from "path";
 
-const rule: Rule.RuleModule = {
+export const rule: Rule.RuleModule = {
   meta: {
     type: "problem",
     docs: {
@@ -51,5 +51,3 @@ const rule: Rule.RuleModule = {
     };
   },
 };
-
-export default rule;

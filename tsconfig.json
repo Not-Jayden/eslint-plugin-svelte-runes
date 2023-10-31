@@ -4,12 +4,14 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "lib": ["dom", "es2020"],
-    "allowJs": true,
-    "checkJs": true,
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
 
+    "esModuleInterop": true,
+
+    "baseUrl": ".",
     "outDir": "./dist"
   }
 }
