@@ -1,5 +1,6 @@
 {
-  "name": "svelte-restricted-imports",
+  "name": "eslint-plugin-svelte-boundaries",
+  "version": "0.0.1",
   "main": "./src/index.ts",
   "scripts": {
     "build": "tsc",
