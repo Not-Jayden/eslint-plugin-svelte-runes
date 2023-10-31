@@ -1,6 +1,5 @@
 import { Rule } from "eslint";
-import { existsSync } from "fs";
-import { dirname, resolve } from "path";
+
 import { getImportSource } from "../utils/getImportSource";
 
 export const rule: Rule.RuleModule = {
