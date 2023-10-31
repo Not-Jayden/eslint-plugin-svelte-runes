@@ -7,7 +7,7 @@ export function getImportSource({
 }: {
   source: string;
   fileName: string;
-}): string | null {
+}): string {
   const importedModulePath = resolve(dirname(fileName), source);
 
   if (existsSync(importedModulePath)) {
@@ -22,5 +22,5 @@ export function getImportSource({
     return importedModulePath + ".ts";
   }
 
-  return null;
+  return importedModulePath;
 }

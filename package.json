@@ -2,13 +2,15 @@
   "name": "svelte-restricted-imports",
   "main": "./src/index.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "vitest"
   },
   "devDependencies": {
     "@types/eslint": "^8.44.6",
     "@types/node": "^20.8.10",
     "eslint": "8.52.0",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "vitest": "^0.34.6"
   }
 }
