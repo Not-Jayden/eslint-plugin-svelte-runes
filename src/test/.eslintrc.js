@@ -1,3 +1,5 @@
+//
+
 module.exports = {
   plugins: ["svelte-restricted-imports"],
 
@@ -10,6 +12,6 @@ module.exports = {
   },
 
   rules: {
-    "svelte-restricted-imports/no-restricted-svelte-imports": 2,
+    "svelte-restricted-imports/no-restricted-svelte-imports": "error",
   },
 };
