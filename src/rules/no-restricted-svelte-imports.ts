@@ -1,39 +1,38 @@
 import { Rule } from "eslint";
 import { existsSync } from "fs";
 import { dirname, resolve } from "path";
+import { getImportSource } from "../utils/getImportSource";
 
 export const rule: Rule.RuleModule = {
   meta: {
     type: "problem",
     docs: {
       description:
-        "Disallow importing from .svelte.js/ts files outside of .svelte.js/ts files and .svelte files",
+        "disallow importing from .svelte.js/ts files outside of .svelte.js/ts files and .svelte files",
       category: "Possible Errors",
     },
     messages: {
       forbidden:
-        "Importing from .svelte.js/ts files is restricted unless you are within a .svelte.js/ts or .svelte file.",
+        "Importing from .svelte.js/ts files is not allowed unless you are within a .svelte.js/ts or .svelte file.",
     },
   },
 
   create(context) {
     return {
       ImportDeclaration(node) {
-        const fileName = context.getFilename();
-        let importSource = node.source.value;
-
-        if (typeof importSource !== "string") {
+        if (typeof node.source.value !== "string") {
           return;
         }
 
-        // Resolving the absolute path of the imported module
-        const importedModulePath = resolve(dirname(fileName), importSource);
+        const fileName = context.filename;
 
-        // Check if the file with .js or .ts extension exists
-        if (existsSync(importedModulePath + ".js")) {
-          importSource += ".js";
-        } else if (existsSync(importedModulePath + ".ts")) {
-          importSource += ".ts";
+        const importSource = getImportSource({
+          source: node.source.value,
+          fileName,
+        });
+
+        if (!importSource) {
+          return;
         }
 
         // Check if current file is NOT a .svelte.js/ts file or .svelte file but trying to import from one

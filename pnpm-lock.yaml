@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  eslint-plugin-svelte-restricted-imports:
-    specifier: link:/Users/jayden/Documents/projects/svelte-restricted-import/src
-    version: link:src
-
 devDependencies:
   '@types/eslint':
     specifier: ^8.44.6
