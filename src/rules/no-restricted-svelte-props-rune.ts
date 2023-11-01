@@ -1,5 +1,8 @@
 import { Rule } from "eslint";
-import { svelteJsFileExtension, svelteTsFileExtension } from "src/constants";
+import {
+  SVELTE_JS_FILE_EXTENSION,
+  SVELTE_TS_FILE_EXTENSION,
+} from "src/constants";
 
 const rule: Rule.RuleModule = {
   meta: {
@@ -20,8 +23,8 @@ const rule: Rule.RuleModule = {
     // only run this rule on .svelte.js or .svelte.ts files
     const fileName = context.filename;
     if (
-      !fileName.endsWith(svelteJsFileExtension) &&
-      !fileName.endsWith(svelteTsFileExtension)
+      !fileName.endsWith(SVELTE_JS_FILE_EXTENSION) &&
+      !fileName.endsWith(SVELTE_TS_FILE_EXTENSION)
     ) {
       return {};
     }

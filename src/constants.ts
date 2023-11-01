@@ -1,21 +1,21 @@
-const effectRuneName = "$effect";
-const stateRuneName = "$state";
-const derivedRuneName = "$derived";
-const propsRuneName = "$props";
+const EFFECT_RUNE = "$effect";
+const STATE_RUNE = "$state";
+const DERIVED_RUNE = "$derived";
+const PROPS_RUNE = "$props";
 
-const svelteComponentFileExtension = ".svelte";
-export const svelteJsFileExtension = ".svelte.js";
-export const svelteTsFileExtension = ".svelte.ts";
-
-export const svelteFileExtensions = [
-  svelteComponentFileExtension,
-  svelteJsFileExtension,
-  svelteTsFileExtension,
+export const RUNE_NAMES = [
+  EFFECT_RUNE,
+  STATE_RUNE,
+  DERIVED_RUNE,
+  PROPS_RUNE,
 ] as const;
 
-export const runeNames = [
-  effectRuneName,
-  stateRuneName,
-  derivedRuneName,
-  propsRuneName,
+const SVELTE_COMPONENT_FILE_EXTENSION = ".svelte";
+export const SVELTE_JS_FILE_EXTENSION = ".svelte.js";
+export const SVELTE_TS_FILE_EXTENSION = ".svelte.ts";
+
+export const SVELTE_FILE_EXTENSIONS = [
+  SVELTE_COMPONENT_FILE_EXTENSION,
+  SVELTE_JS_FILE_EXTENSION,
+  SVELTE_TS_FILE_EXTENSION,
 ] as const;

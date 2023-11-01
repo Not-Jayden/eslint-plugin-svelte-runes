@@ -1,6 +1,6 @@
 import type { Rule } from "eslint";
 
-import { runeNames, svelteFileExtensions } from "src/constants";
+import { RUNE_NAMES, SVELTE_FILE_EXTENSIONS } from "src/constants";
 
 import { checkIsVariableDefinedForIdentifier } from "src/utils/checkIsVariableDefinedForIdentifier";
 
@@ -22,7 +22,7 @@ export const rule: Rule.RuleModule = {
   create(context) {
     const fileName = context.filename;
     if (
-      svelteFileExtensions.some((extension) => fileName.endsWith(extension))
+      SVELTE_FILE_EXTENSIONS.some((extension) => fileName.endsWith(extension))
     ) {
       return {};
     }
@@ -33,7 +33,7 @@ export const rule: Rule.RuleModule = {
           return;
         }
         if (
-          !runeNames.includes(node.callee.name as (typeof runeNames)[number])
+          !RUNE_NAMES.includes(node.callee.name as (typeof RUNE_NAMES)[number])
         ) {
           return;
         }
