@@ -1,4 +1,4 @@
-import type { Rule } from "eslint";
+import type { Rule, Node } from "eslint";
 
 export const rule: Rule.RuleModule = {
   meta: {
@@ -25,9 +25,12 @@ export const rule: Rule.RuleModule = {
 
     const runeNames = ["$derived", "$effect", "$state", "$props"] as const;
 
-    function isFunctionImportedOrDeclared(name: string): boolean {
+    function isFunctionImportedOrDeclared(
+      node: Rule.Node,
+      name: string
+    ): boolean {
       // Get the current scope
-      const scope = context.getScope();
+      const scope = context.sourceCode.getScope(node);
 
       // Check in the variable list if the function name exists
       const variable = scope.variables.find(
@@ -44,7 +47,7 @@ export const rule: Rule.RuleModule = {
           node.callee.type === "Identifier" &&
           runeNames.includes(node.callee.name as (typeof runeNames)[number])
         ) {
-          if (!isFunctionImportedOrDeclared(node.callee.name)) {
+          if (!isFunctionImportedOrDeclared(node, node.callee.name)) {
             context.report({
               node,
               messageId: "runeDetected",
