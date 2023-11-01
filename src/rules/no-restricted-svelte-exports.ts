@@ -8,9 +8,10 @@ export const rule: Rule.RuleModule = {
       description:
         "disallow exporting directly from .svelte.js/ts files outside of .svelte.js/ts files",
       category: "Possible Errors",
+      recommended: true,
     },
     messages: {
-      forbidden:
+      noRestrictedSvelteExports:
         "Exporting directly from .svelte.js/ts files is not allowed unless you are within a .svelte.js/ts file.",
     },
   },

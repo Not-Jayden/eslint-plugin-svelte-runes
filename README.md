@@ -22,11 +22,11 @@ bun add eslint-plugin-svelte-boundaries --dev
 
 ## 🚀 Usage
 
-Add `svelte-boundaries` to the plugins section of your `.eslintrc` configuration file:
+Add `eslint-plugin-svelte-boundaries` to the plugins section of your `.eslintrc` configuration file:
 
 ```json
 {
-  "plugins": ["svelte-boundaries"]
+  "plugins": ["eslint-plugin-svelte-boundaries"]
 }
 ```
 
@@ -38,7 +38,7 @@ This plugin ships with a `recommended` configuration that sets up all the provid
 
 ```json
 {
-  "extends": ["plugin:svelte-boundaries/recommended"]
+  "extends": ["plugin:eslint-plugin-svelte-boundaries/recommended"]
 }
 ```
 

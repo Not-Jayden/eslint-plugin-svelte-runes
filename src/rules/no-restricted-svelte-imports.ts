@@ -9,9 +9,10 @@ export const rule: Rule.RuleModule = {
       description:
         "disallow importing from .svelte.js/ts files outside of .svelte.js/ts files and .svelte files",
       category: "Possible Errors",
+      recommended: true,
     },
     messages: {
-      forbidden:
+      noRestrictedSvelteImports:
         "Importing from .svelte.js/ts files is not allowed unless you are within a .svelte.js/ts or .svelte file.",
     },
   },
