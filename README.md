@@ -26,7 +26,7 @@ Add `eslint-plugin-svelte-boundaries` to the plugins section of your `.eslintrc`
 
 ```json
 {
-  "plugins": ["eslint-plugin-svelte-boundaries"]
+	"plugins": ["eslint-plugin-svelte-boundaries"]
 }
 ```
 
@@ -38,7 +38,7 @@ This plugin ships with a `recommended` configuration that sets up all the provid
 
 ```json
 {
-  "extends": ["plugin:eslint-plugin-svelte-boundaries/recommended"]
+	"extends": ["plugin:eslint-plugin-svelte-boundaries/recommended"]
 }
 ```
 
@@ -48,41 +48,41 @@ This plugin ships with a `recommended` configuration that sets up all the provid
 
 Disallow importing from `.svelte.js/ts` files outside of `.svelte.js/ts` files and `.svelte` files.
 
-- **Problematic patterns**:
+-   **Problematic patterns**:
 
-  ```javascript
-  import something from "component.svelte.js";
-  ```
+    ```javascript
+    import something from 'component.svelte.js';
+    ```
 
-  In a non-`.svelte.js/ts` and non-`.svelte` file.
+    In a non-`.svelte.js/ts` and non-`.svelte` file.
 
-- **Passing patterns**:
+-   **Passing patterns**:
 
-  ```javascript
-  import something from "component.svelte.js";
-  ```
+    ```javascript
+    import something from 'component.svelte.js';
+    ```
 
-  In a `.svelte.js/ts` or `.svelte` file.
+    In a `.svelte.js/ts` or `.svelte` file.
 
 ### no-restricted-svelte-exports
 
 Disallow exporting directly from `.svelte.js/ts` files outside of `.svelte.js/ts` files.
 
-- **Problematic patterns**:
+-   **Problematic patterns**:
 
-  ```javascript
-  export { something } from "component.svelte.js";
-  ```
+    ```javascript
+    export { something } from 'component.svelte.js';
+    ```
 
-  In a non-`.svelte.js/ts` file.
+    In a non-`.svelte.js/ts` file.
 
-- **Passing patterns**:
+-   **Passing patterns**:
 
-  ```javascript
-  export { something } from "component.svelte.js";
-  ```
+    ```javascript
+    export { something } from 'component.svelte.js';
+    ```
 
-  In a `.svelte.js/ts` file.
+    In a `.svelte.js/ts` file.
 
 ## 📄 License
 

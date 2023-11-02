@@ -1,19 +1,19 @@
 {
-  "compilerOptions": {
-    "target": "es2020",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "lib": ["dom", "es2020"],
-    "declaration": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "noUncheckedIndexedAccess": true,
+	"compilerOptions": {
+		"target": "es2020",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"lib": ["dom", "es2020"],
+		"declaration": true,
+		"strict": true,
+		"noImplicitAny": true,
+		"noUncheckedIndexedAccess": true,
 
-    "esModuleInterop": true,
+		"esModuleInterop": true,
 
-    "baseUrl": ".",
-    "outDir": "./dist"
-  },
-  "include": ["src/**/*"],
-  "exclude": ["src/test/**/*"]
+		"baseUrl": ".",
+		"outDir": "./dist"
+	},
+	"include": ["src/**/*"],
+	"exclude": ["src/test/**/*"]
 }
