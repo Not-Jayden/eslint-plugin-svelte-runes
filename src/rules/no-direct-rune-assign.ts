@@ -1,8 +1,8 @@
 import type { Rule } from 'eslint';
 
-import { RUNE_NAMES, SVELTE_FILE_EXTENSIONS } from 'src/constants';
+import { RUNE_NAMES, SVELTE_FILE_EXTENSIONS } from '../constants';
 
-import { getPropertyValueIdentifier } from 'src/utils/getPropertyValueIdentifier';
+import { getPropertyValueIdentifier } from '../utils/getPropertyValueIdentifier';
 
 const messageId = 'noRestrictedDirectRuneAssignments';
 

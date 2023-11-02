@@ -1,6 +1,6 @@
 import { Rule } from 'eslint';
 
-import { EFFECT_RUNE, SVELTE_JS_FILE_EXTENSION, SVELTE_TS_FILE_EXTENSION } from 'src/constants';
+import { EFFECT_RUNE, SVELTE_JS_FILE_EXTENSION, SVELTE_TS_FILE_EXTENSION } from '../constants';
 
 const messageId = 'noEffectOutsideComponents';
 

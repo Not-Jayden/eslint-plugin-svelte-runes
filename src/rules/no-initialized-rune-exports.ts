@@ -1,6 +1,6 @@
 import type { Rule } from 'eslint';
 
-import { RUNE_NAMES } from 'src/constants';
+import { RUNE_NAMES } from '../constants';
 
 const messageId = 'noInitializedRuneExports';
 

@@ -1,8 +1,8 @@
 import type { Rule } from 'eslint';
 
-import { RUNE_NAMES, SVELTE_FILE_EXTENSIONS } from 'src/constants';
+import { RUNE_NAMES, SVELTE_FILE_EXTENSIONS } from '../constants';
 
-import { checkIsVariableDefinedForIdentifier } from 'src/utils/checkIsVariableDefinedForIdentifier';
+import { checkIsVariableDefinedForIdentifier } from '../utils/checkIsVariableDefinedForIdentifier';
 
 const messageId = 'noRestrictedSvelteRunes';
 

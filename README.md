@@ -44,45 +44,19 @@ This plugin ships with a `recommended` configuration that sets up all the provid
 
 ## 📜 Rules
 
-### no-restricted-svelte-imports
+| Rule Name                                                                  | Description                                                                                                                     |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| [no-external-svelte-imports](docs/rules/no-external-svelte-imports.md)     | Disallow importing from .svelte.js/ts files outside of .svelte.js/ts files and .svelte files.                                   |
+| [no-external-svelte-exports](docs/rules/no-external-svelte-exports.md)     | Disallow exporting directly from .svelte.js/ts files outside of .svelte.js/ts files.                                            |
+| [no-external-rune-calls](docs/rules/no-external-rune-calls.md)             | Disallow the usage of $derived(), $effect(), $state(), and $props() in non-Svelte files unless explicitly declared or imported. |
+| [no-effect-outside-components](docs/rules/no-effect-outside-components.md) | Disallow usage of the $effect rune outside of .svelte files.                                                                    |
+| [no-props-outside-components](docs/rules/no-props-outside-components.md)   | Disallow usage of the $props rune outside of .svelte files.                                                                     |
+| [no-direct-rune-assign](docs/rules/no-direct-rune-assign.md)               | Disallow the assignment of Svelte runes as object properties or direct variable assignments.                                    |
+| [no-initialized-rune-exports](docs/rules/no-initialized-rune-exports.md)   | Disallow the export of variables or values initialized with a Svelte rune CallExpression.                                       |
 
-Disallow importing from `.svelte.js/ts` files outside of `.svelte.js/ts` files and `.svelte` files.
+## 🤝 Contributions
 
--   **Problematic patterns**:
-
-    ```javascript
-    import something from 'component.svelte.js';
-    ```
-
-    In a non-`.svelte.js/ts` and non-`.svelte` file.
-
--   **Passing patterns**:
-
-    ```javascript
-    import something from 'component.svelte.js';
-    ```
-
-    In a `.svelte.js/ts` or `.svelte` file.
-
-### no-restricted-svelte-exports
-
-Disallow exporting directly from `.svelte.js/ts` files outside of `.svelte.js/ts` files.
-
--   **Problematic patterns**:
-
-    ```javascript
-    export { something } from 'component.svelte.js';
-    ```
-
-    In a non-`.svelte.js/ts` file.
-
--   **Passing patterns**:
-
-    ```javascript
-    export { something } from 'component.svelte.js';
-    ```
-
-    In a `.svelte.js/ts` file.
+Contributions to `eslint-plugin-svelte-boundaries` are always welcome!
 
 ## 📄 License
 
