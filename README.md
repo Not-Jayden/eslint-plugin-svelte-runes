@@ -1,6 +1,6 @@
 # eslint-plugin-svelte-boundaries
 
-Ensures strict boundaries between your .svelte.js/ts and regular JS/TS files.
+Ensures strict boundaries between your Svelte 5 and regular JS/TS files.
 
 ## 📦 Installation
 
