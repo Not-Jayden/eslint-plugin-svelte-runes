@@ -1,12 +1,17 @@
 import type { ESLint } from 'eslint';
 
-import { rule as noRestrictedSvelteImportsRule } from './rules/no-restricted-svelte-imports';
-import { rule as noRestrictedSvelteExportsRule } from './rules/no-restricted-svelte-exports';
+import { rule as noExternalSvelteImportsRule } from './rules/no-external-svelte-imports';
+import { rule as noExternalSvelteExportsRule } from './rules/no-external-svelte-exports';
 
 const plugin = {
+	// TODO: generate this from package.json
+	meta: {
+		name: 'eslint-plugin-svelte-boundaries',
+		version: '0.0.0',
+	},
 	rules: {
-		'no-restricted-svelte-imports': noRestrictedSvelteImportsRule,
-		'no-restricted-svelte-exports': noRestrictedSvelteExportsRule,
+		'no-external-svelte-imports': noExternalSvelteImportsRule,
+		'no-external-svelte-exports': noExternalSvelteExportsRule,
 	},
 
 	configs: {

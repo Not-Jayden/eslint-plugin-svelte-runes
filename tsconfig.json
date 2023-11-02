@@ -8,6 +8,7 @@
 		"strict": true,
 		"noImplicitAny": true,
 		"noUncheckedIndexedAccess": true,
+		"sourceMap": true,
 
 		"esModuleInterop": true,
 

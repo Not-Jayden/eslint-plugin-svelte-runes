@@ -4,17 +4,29 @@
 	"version": "0.0.1",
 	"main": "./src/index.ts",
 	"license": "MIT",
+	"files": [
+		"dist",
+		"src"
+	],
 	"scripts": {
+		"clean": "rimraf dist",
+		"prebuild": "npm run clean",
 		"build": "tsc",
+		"preversion": "npm run build",
+		"postversion": "git push --follow-tags",
 		"test": "vitest",
-		"pretty": "prettier --write ."
+		"pretty": "prettier --ignore-path .gitignore --write .",
+		"lint": "eslint  --ignore-path .gitignore ."
 	},
 	"devDependencies": {
 		"@types/eslint": "^8.44.6",
 		"@types/estree": "^1.0.4",
 		"@types/node": "^20.8.10",
+		"@typescript-eslint/eslint-plugin": "^6.9.1",
+		"@typescript-eslint/parser": "^6.9.1",
 		"eslint": "8.52.0",
 		"prettier": "^3.0.3",
+		"rimraf": "^5.0.5",
 		"tsconfig-paths": "^4.2.0",
 		"typescript": "5.2.2",
 		"vitest": "^0.34.6"
