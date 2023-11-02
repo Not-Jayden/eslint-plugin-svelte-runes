@@ -38,7 +38,7 @@ This plugin ships with a `recommended` configuration that sets up all the provid
 
 ```json
 {
-	"extends": ["plugin:eslint-plugin-svelte-boundaries/recommended"]
+	"extends": ["plugin:svelte-boundaries/recommended"]
 }
 ```
 
