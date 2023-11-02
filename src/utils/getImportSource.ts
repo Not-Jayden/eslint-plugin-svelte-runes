@@ -1,6 +1,9 @@
 import { existsSync } from "fs";
 import { dirname, resolve } from "path";
 
+/**
+ * Get the absolute path of the imported module, including the file extension.
+ */
 export function getImportSource({
   source,
   fileName,

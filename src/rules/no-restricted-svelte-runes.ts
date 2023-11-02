@@ -9,7 +9,7 @@ export const rule: Rule.RuleModule = {
     type: "problem",
     docs: {
       description:
-        "disallow the usage of $derived(), $effect(), $state(), and $props() function calls unless explicitly declared or imported",
+        "disallow the usage of $derived(), $effect(), $state(), and $props() function calls in non-Svelte files unless explicitly declared or imported",
       category: "Possible Errors",
       recommended: true,
     },

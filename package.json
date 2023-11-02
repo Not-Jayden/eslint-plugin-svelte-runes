@@ -1,20 +1,22 @@
 {
-  "name": "eslint-plugin-svelte-boundaries",
-  "author": "Not-Jayden",
-  "version": "0.0.1",
-  "main": "./src/index.ts",
-  "license": "MIT",
-  "scripts": {
-    "build": "tsc",
-    "test": "vitest"
-  },
-  "devDependencies": {
-    "@types/eslint": "^8.44.6",
-    "@types/estree": "^1.0.4",
-    "@types/node": "^20.8.10",
-    "eslint": "8.52.0",
-    "tsconfig-paths": "^4.2.0",
-    "typescript": "5.2.2",
-    "vitest": "^0.34.6"
-  }
+	"name": "eslint-plugin-svelte-boundaries",
+	"author": "Not-Jayden",
+	"version": "0.0.1",
+	"main": "./src/index.ts",
+	"license": "MIT",
+	"scripts": {
+		"build": "tsc",
+		"test": "vitest",
+		"pretty": "prettier --write ."
+	},
+	"devDependencies": {
+		"@types/eslint": "^8.44.6",
+		"@types/estree": "^1.0.4",
+		"@types/node": "^20.8.10",
+		"eslint": "8.52.0",
+		"prettier": "^3.0.3",
+		"tsconfig-paths": "^4.2.0",
+		"typescript": "5.2.2",
+		"vitest": "^0.34.6"
+	}
 }

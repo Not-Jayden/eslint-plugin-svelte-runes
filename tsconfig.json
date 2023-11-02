@@ -13,5 +13,7 @@
 
     "baseUrl": ".",
     "outDir": "./dist"
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/test/**/*"]
 }
