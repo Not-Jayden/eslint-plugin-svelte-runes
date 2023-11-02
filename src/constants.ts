@@ -1,7 +1,7 @@
-const EFFECT_RUNE = '$effect';
+export const EFFECT_RUNE = '$effect';
 const STATE_RUNE = '$state';
 const DERIVED_RUNE = '$derived';
-const PROPS_RUNE = '$props';
+export const PROPS_RUNE = '$props';
 
 export const RUNE_NAMES = [EFFECT_RUNE, STATE_RUNE, DERIVED_RUNE, PROPS_RUNE] as const;
 

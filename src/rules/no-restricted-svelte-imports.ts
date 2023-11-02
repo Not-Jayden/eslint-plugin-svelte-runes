@@ -4,6 +4,8 @@ import { getImportSource } from '../utils/getImportSource';
 
 type ImportNode = Extract<Rule.Node, { type: 'ImportDeclaration' | 'ImportExpression' }>;
 
+const messageId = 'noRestrictedSvelteImports';
+
 export const rule: Rule.RuleModule = {
 	meta: {
 		type: 'problem',
@@ -13,7 +15,7 @@ export const rule: Rule.RuleModule = {
 			recommended: true,
 		},
 		messages: {
-			noRestrictedSvelteImports:
+			[messageId]:
 				'Importing from .svelte.js/ts files is not allowed unless you are within a .svelte.js/ts or .svelte file.',
 		},
 	},
@@ -43,7 +45,7 @@ export const rule: Rule.RuleModule = {
 			) {
 				context.report({
 					node,
-					messageId: 'noRestrictedSvelteImports',
+					messageId,
 				});
 			}
 		}
@@ -59,6 +61,7 @@ export const rule: Rule.RuleModule = {
 
 				checkImport(node, node.source.value);
 			},
+
 			ImportExpression(node) {
 				if (node.source.type !== 'Literal') {
 					return;

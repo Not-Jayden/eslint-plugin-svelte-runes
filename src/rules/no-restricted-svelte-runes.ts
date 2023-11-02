@@ -4,6 +4,8 @@ import { RUNE_NAMES, SVELTE_FILE_EXTENSIONS } from 'src/constants';
 
 import { checkIsVariableDefinedForIdentifier } from 'src/utils/checkIsVariableDefinedForIdentifier';
 
+const messageId = 'noRestrictedSvelteRunes';
+
 export const rule: Rule.RuleModule = {
 	meta: {
 		type: 'problem',
@@ -14,7 +16,7 @@ export const rule: Rule.RuleModule = {
 			recommended: true,
 		},
 		messages: {
-			noRestrictedSvelteRunes: 'Usage of Svelte runes is not allowed outside Svelte files',
+			[messageId]: 'Usage of Svelte runes is not allowed outside Svelte files',
 		},
 	},
 
@@ -45,7 +47,7 @@ export const rule: Rule.RuleModule = {
 
 				context.report({
 					node,
-					messageId: 'runeDetected',
+					messageId,
 				});
 			},
 		};

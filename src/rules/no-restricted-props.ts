@@ -1,5 +1,6 @@
 import { Rule } from 'eslint';
-import { SVELTE_JS_FILE_EXTENSION, SVELTE_TS_FILE_EXTENSION } from 'src/constants';
+
+import { PROPS_RUNE, SVELTE_JS_FILE_EXTENSION, SVELTE_TS_FILE_EXTENSION } from 'src/constants';
 
 const rule: Rule.RuleModule = {
 	meta: {
@@ -7,12 +8,10 @@ const rule: Rule.RuleModule = {
 		docs: {
 			description: 'disallow usage of the $props rune outside of .svelte files',
 			category: 'Possible Errors',
-			recommended: true,
 		},
 		messages: {
 			noRestrictedSveltePropsRune: 'Usage of the $props rune is only allowed within .svelte component files',
 		},
-		schema: [],
 	},
 
 	create: (context) => {
@@ -24,7 +23,7 @@ const rule: Rule.RuleModule = {
 
 		return {
 			Identifier(node) {
-				if (node.name === '$props') {
+				if (node.name === PROPS_RUNE) {
 					context.report({
 						node,
 						messageId: 'noRestrictedSveltePropsRune',

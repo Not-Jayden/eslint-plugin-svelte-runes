@@ -2,7 +2,11 @@ import type { Rule } from 'eslint';
 
 import { RUNE_NAMES, SVELTE_FILE_EXTENSIONS } from 'src/constants';
 
-export const noRestrictedDirectRuneAssignments: Rule.RuleModule = {
+import { getPropertyValueIdentifier } from 'src/utils/getPropertyValueIdentifier';
+
+const messageId = 'noRestrictedDirectRuneAssignments';
+
+export const rule: Rule.RuleModule = {
 	meta: {
 		type: 'problem',
 		docs: {
@@ -12,8 +16,7 @@ export const noRestrictedDirectRuneAssignments: Rule.RuleModule = {
 			recommended: true,
 		},
 		messages: {
-			noRestrictedDirectRuneAssignments:
-				'Direct assignment or property assignment of Svelte runes is not allowed without invocation.',
+			[messageId]: 'Direct assignment or property assignment of Svelte runes is not allowed without invocation.',
 		},
 	},
 
@@ -24,30 +27,18 @@ export const noRestrictedDirectRuneAssignments: Rule.RuleModule = {
 
 		return {
 			Property(node) {
-				function getIdentifierOfInterest(node: Extract<Rule.Node, { type: 'Property' }>) {
-					if (node.shorthand && node.key.type === 'Identifier') {
-						return node.key;
-					}
-
-					if (node.value.type === 'Identifier') {
-						return node.value;
-					}
-
-					return null;
-				}
-
-				const identifierOfInterest = getIdentifierOfInterest(node);
-				if (!identifierOfInterest) {
+				const propertyValueIdentifier = getPropertyValueIdentifier(node);
+				if (!propertyValueIdentifier) {
 					return;
 				}
 
-				if (!RUNE_NAMES.includes(identifierOfInterest.name as (typeof RUNE_NAMES)[number])) {
+				if (!RUNE_NAMES.includes(propertyValueIdentifier.name as (typeof RUNE_NAMES)[number])) {
 					return;
 				}
 
 				context.report({
-					node: identifierOfInterest,
-					messageId: 'noRuneAssignments',
+					node: propertyValueIdentifier,
+					messageId,
 				});
 			},
 			VariableDeclarator(node) {
@@ -61,7 +52,7 @@ export const noRestrictedDirectRuneAssignments: Rule.RuleModule = {
 
 				context.report({
 					node: node.init,
-					messageId: 'noRuneAssignments',
+					messageId,
 				});
 			},
 		};

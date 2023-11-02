@@ -1,5 +1,8 @@
 import type { Rule } from 'eslint';
+
 import { getImportSource } from '../utils/getImportSource';
+
+const messageId = 'noRestrictedSvelteExports';
 
 export const rule: Rule.RuleModule = {
 	meta: {
@@ -10,7 +13,7 @@ export const rule: Rule.RuleModule = {
 			recommended: true,
 		},
 		messages: {
-			noRestrictedSvelteExports:
+			[messageId]:
 				'Exporting directly from .svelte.js/ts files is not allowed unless you are within a .svelte.js/ts file.',
 		},
 	},
@@ -37,7 +40,7 @@ export const rule: Rule.RuleModule = {
 				if (!fileName.match(/\.svelte\.(js|ts)$/i) && exportSource.match(/\.svelte\.(js|ts)$/i)) {
 					context.report({
 						node: node.source,
-						messageId: 'forbidden',
+						messageId,
 					});
 				}
 			},
@@ -62,7 +65,7 @@ export const rule: Rule.RuleModule = {
 				if (!fileName.match(/\.svelte\.(js|ts)$/i) && exportSource.match(/\.svelte\.(js|ts)$/i)) {
 					context.report({
 						node: node.source,
-						messageId: 'forbidden',
+						messageId,
 					});
 				}
 			},

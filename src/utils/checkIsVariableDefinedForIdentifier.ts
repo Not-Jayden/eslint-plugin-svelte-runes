@@ -1,6 +1,9 @@
 import type { Scope } from 'eslint';
 import type { Identifier } from 'estree';
 
+/** Checks if a variable is defined in the scope chain of a given identifier node,
+ * and performs an additional check to see if the identifier is actually a reference to the variable.
+ */
 export function checkIsVariableDefinedForIdentifier({
 	initialScope,
 	identifierNode,

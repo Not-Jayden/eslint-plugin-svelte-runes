@@ -2,16 +2,17 @@ import type { Rule } from 'eslint';
 
 import { RUNE_NAMES } from 'src/constants';
 
-export const noExportedRuneInitializersRule: Rule.RuleModule = {
+const messageId = 'noExportedRunes';
+
+export const rule: Rule.RuleModule = {
 	meta: {
 		type: 'problem',
 		docs: {
 			description: 'Disallow the export of variables or values initialized with a Svelte rune CallExpression.',
 			category: 'Possible Errors',
-			recommended: true,
 		},
 		messages: {
-			noExportedRunes: 'Do not export values initialized with Svelte runes.',
+			[messageId]: 'Do not export values initialized with Svelte runes.',
 		},
 	},
 
@@ -43,7 +44,7 @@ export const noExportedRuneInitializersRule: Rule.RuleModule = {
 						) {
 							context.report({
 								node: declarator,
-								messageId: 'noExportedRunes',
+								messageId,
 							});
 						}
 					}
@@ -58,7 +59,7 @@ export const noExportedRuneInitializersRule: Rule.RuleModule = {
 						) {
 							context.report({
 								node: specifier,
-								messageId: 'noExportedRunes',
+								messageId,
 							});
 						}
 					}
@@ -73,12 +74,12 @@ export const noExportedRuneInitializersRule: Rule.RuleModule = {
 				) {
 					context.report({
 						node: node.declaration,
-						messageId: 'noExportedRunes',
+						messageId,
 					});
 				} else if (node.declaration.type === 'Identifier' && runeInitializers.has(node.declaration.name)) {
 					context.report({
 						node: node.declaration,
-						messageId: 'noExportedRunes',
+						messageId,
 					});
 				}
 			},
