@@ -2,7 +2,7 @@ import type { Rule } from 'eslint';
 
 import { RUNE_NAMES } from 'src/constants';
 
-const messageId = 'noExportedRunes';
+const messageId = 'noInitializedRuneExports';
 
 export const rule: Rule.RuleModule = {
 	meta: {

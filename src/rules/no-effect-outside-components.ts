@@ -1,8 +1,10 @@
 import { Rule } from 'eslint';
 
-import { PROPS_RUNE, SVELTE_JS_FILE_EXTENSION, SVELTE_TS_FILE_EXTENSION } from 'src/constants';
+import { EFFECT_RUNE, SVELTE_JS_FILE_EXTENSION, SVELTE_TS_FILE_EXTENSION } from 'src/constants';
 
-const rule: Rule.RuleModule = {
+const messageId = 'noEffectOutsideComponents';
+
+export const rule: Rule.RuleModule = {
 	meta: {
 		type: 'problem',
 		docs: {
@@ -10,7 +12,7 @@ const rule: Rule.RuleModule = {
 			category: 'Possible Errors',
 		},
 		messages: {
-			noRestrictedSveltePropsRune: '$effect rune should only allowed within .svelte component files',
+			[messageId]: '$effect rune should only allowed within .svelte component files',
 		},
 	},
 
@@ -18,19 +20,19 @@ const rule: Rule.RuleModule = {
 		// only run this rule on .svelte.js or .svelte.ts files
 		const fileName = context.filename;
 
-		const isSvelteFile = [SVELTE_JS_FILE_EXTENSION, SVELTE_TS_FILE_EXTENSION].some((extension) =>
+		const isSvelteJsOrTsFile = [SVELTE_JS_FILE_EXTENSION, SVELTE_TS_FILE_EXTENSION].some((extension) =>
 			fileName.endsWith(extension),
 		);
-		if (!isSvelteFile) {
+		if (!isSvelteJsOrTsFile) {
 			return {};
 		}
 
 		return {
 			Identifier(node) {
-				if (node.name === PROPS_RUNE) {
+				if (node.name === EFFECT_RUNE) {
 					context.report({
 						node,
-						messageId: 'noRestrictedSveltePropsRune',
+						messageId,
 					});
 				}
 			},
