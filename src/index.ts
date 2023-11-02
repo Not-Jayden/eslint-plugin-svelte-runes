@@ -19,10 +19,10 @@ const rules = {
 } as const satisfies Record<string, Rule.RuleModule>;
 
 const plugin = {
-	// TODO: generate this from package.json
+	// TODO: generate meta from package.json
 	meta: {
 		name: 'eslint-plugin-svelte-boundaries',
-		version: '0.0.0',
+		version: '0.0.1',
 	},
 	rules,
 
