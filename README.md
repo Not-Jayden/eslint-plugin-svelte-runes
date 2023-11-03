@@ -1,6 +1,16 @@
-# eslint-plugin-svelte-boundaries
+# eslint-plugin-svelte-runes
 
-Ensures strict boundaries between your Svelte 5 and regular JS/TS files.
+This plugin intends to provide a collection of rules specifically tailored for enforcing correct and safe usage of Svelte 5 runes.
+
+> 🚧 NOTE: This plugin is still in early development and is subject to breaking changes.
+
+## 🎯 Why This Plugin?
+
+1. Proactive support: Svelte 5 hasn't yet fully landed, but this plugin aims to provide a set of rules that will be ready for enforcing best practices when it does.
+
+1. Safe Universal Reactivity: Focuses on the nuances introduced with Svelte 5 runes, especially with maintaining a safe separation of concerns between Svelte and non-Svelte code in js/ts files.
+
+1. Bridging the Gap: While the official [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte) may take some time to provide support for Svelte 5 and js/ts file, this plugin aims to fill that void.
 
 ## 📦 Installation
 
@@ -8,25 +18,25 @@ Using npm:
 
 ```bash
 # Using npm
-npm install eslint-plugin-svelte-boundaries --save-dev
+npm install eslint-plugin-svelte-runes --save-dev
 
 # Using yarn
-yarn add eslint-plugin-svelte-boundaries --dev
+yarn add eslint-plugin-svelte-runes --dev
 
 # Using pnpm
-pnpm add -D eslint-plugin-svelte-boundaries
+pnpm add -D eslint-plugin-svelte-runes
 
 # Using bun
-bun add eslint-plugin-svelte-boundaries --dev
+bun add eslint-plugin-svelte-runes --dev
 ```
 
 ## 🚀 Usage
 
-Add `eslint-plugin-svelte-boundaries` to the plugins section of your `.eslintrc` configuration file:
+Add `eslint-plugin-svelte-runes` to the plugins section of your `.eslintrc` configuration file:
 
 ```json
 {
-	"plugins": ["eslint-plugin-svelte-boundaries"]
+	"plugins": ["eslint-plugin-svelte-runes"]
 }
 ```
 
@@ -56,8 +66,8 @@ This plugin ships with a `recommended` configuration that sets up all the provid
 
 ## 🤝 Contributions
 
-Contributions to `eslint-plugin-svelte-boundaries` are always welcome!
+Contributions to `eslint-plugin-svelte-runes` are always welcome!
 
 ## 📄 License
 
-`eslint-plugin-svelte-boundaries` is licensed under the [MIT License](./LICENSE).
+`eslint-plugin-svelte-runes` is licensed under the [MIT License](./LICENSE).

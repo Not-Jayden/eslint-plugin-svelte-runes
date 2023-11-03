@@ -1,5 +1,5 @@
 {
-	"name": "eslint-plugin-svelte-boundaries",
+	"name": "eslint-plugin-svelte-runes",
 	"author": "Not-Jayden",
 	"version": "0.0.1",
 	"main": "./src/index.ts",

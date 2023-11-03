@@ -21,7 +21,7 @@ const rules = {
 const plugin = {
 	// TODO: generate meta from package.json
 	meta: {
-		name: 'eslint-plugin-svelte-boundaries',
+		name: 'eslint-plugin-svelte-runes',
 		version: '0.0.1',
 	},
 	rules,
@@ -29,8 +29,8 @@ const plugin = {
 	configs: {
 		recommended: {
 			rules: {
-				'svelte-code-boundary/no-external-svelte-imports': 'error',
-				'svelte-code-boundary/no-external-svelte-exports': 'error',
+				'svelte-runes/no-external-svelte-imports': 'error',
+				'svelte-runes/no-external-svelte-exports': 'error',
 			},
 		},
 	},
