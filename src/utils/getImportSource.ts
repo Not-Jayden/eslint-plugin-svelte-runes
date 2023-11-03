@@ -4,7 +4,7 @@ import { dirname, resolve } from 'path';
 /**
  * Get the absolute path of the imported module, including the file extension.
  */
-export function getImportSource({ source, fileName }: { source: string; fileName: string }): string {
+export function getImportSource({ source, fileName }: { source: string; fileName: string }): string | null {
 	const basePath = dirname(fileName);
 	const importedModulePath = resolve(basePath, source);
 
@@ -22,7 +22,7 @@ export function getImportSource({ source, fileName }: { source: string; fileName
 			return importedModulePath + '.ts';
 		}
 
-		return importedModulePath;
+		return null;
 	}
 
 	// For modules in node_modules or node's resolution logic
@@ -31,7 +31,6 @@ export function getImportSource({ source, fileName }: { source: string; fileName
 			paths: [basePath],
 		});
 	} catch (e) {
-		// If not found, return the original path
-		return importedModulePath;
+		return null;
 	}
 }

@@ -1,6 +1,6 @@
 # eslint-plugin-svelte-runes
 
-This plugin intends to provide a collection of rules specifically tailored for enforcing correct and safe usage of Svelte 5 runes.
+This plugin intends to provide a collection of rules specifically tailored for enforcing correct and safe usage of [Svelte 5 runes](https://svelte.dev/blog/runes).
 
 > 🚧 NOTE: This plugin is still in early development and is subject to breaking changes.
 
