@@ -36,6 +36,11 @@ export const ruleReturn: Rule.RuleModule = {
 			ReturnStatement(node) {
 				if (node.argument?.type === 'ObjectExpression') {
 					for (const property of node.argument.properties) {
+						// TODO: Handle basic spread property case
+						if (property.type !== 'Property') {
+							continue;
+						}
+
 						if (property.value.type === 'Identifier' && runeInitializers.has(property.value.name)) {
 							context.report({
 								node: property,
