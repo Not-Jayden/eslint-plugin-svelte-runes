@@ -6,11 +6,7 @@ This plugin intends to provide a collection of rules specifically tailored for e
 
 ## 🎯 Why This Plugin?
 
-1. Proactive support: Svelte 5 hasn't yet fully landed, but this plugin aims to provide a set of rules that will be ready for enforcing best practices when it does.
-
-1. Safe Universal Reactivity: Focuses on the nuances introduced with Svelte 5 runes, especially with maintaining a safe separation of concerns between Svelte and non-Svelte code in js/ts files.
-
-1. Bridging the Gap: While the official [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte) may take some time to provide support for Svelte 5 and js/ts file, this plugin aims to fill that void.
+This plugin proactively prepares for the upcoming Svelte 5 release by establishing rules for best practices and addressing the nuanced universal reactivity challenges between Svelte and non-Svelte code in js/ts files. While the official [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte) may take time to support Svelte 5 and js/ts files, this plugin aims to fill that void.
 
 ## 📦 Installation
 
@@ -48,7 +44,7 @@ This plugin ships with a `recommended` configuration that sets up all the provid
 
 ```json
 {
-	"extends": ["plugin:svelte-boundaries/recommended"]
+	"extends": ["plugin:svelte-runes/recommended"]
 }
 ```
 
