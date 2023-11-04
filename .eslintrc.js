@@ -19,7 +19,12 @@ module.exports = {
 		],
 		// TODO: figure out how to get this to play nice with typescript
 		'n/no-missing-import': ['off'],
-		'eslint-plugin-svelte-runes/no-direct-rune-assign': 'error',
+
+		'svelte-runes/no-direct-rune-assign': 'error',
+		'svelte-runes/no-effect-outside-components': 'error',
+		'svelte-runes/no-external-rune-calls': ['error'],
+		'svelte-runes/no-external-svelte-exports': 'error',
+		'svelte-runes/no-external-svelte-imports': 'error',
 	},
 	settings: {
 		'eslint-plugin-n': {},
