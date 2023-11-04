@@ -7,7 +7,7 @@ ruleTester.run('no-external-rune-calls', rule, {
 			code: `$effect(() => {console.log(count);});`,
 			filename: 'Counter.svelte',
 		},
-		// manually defined runes in a non-svelte file
+		// manually defined rune in a non-svelte file
 		{
 			code: `const $state = (value) => {
 				return value;

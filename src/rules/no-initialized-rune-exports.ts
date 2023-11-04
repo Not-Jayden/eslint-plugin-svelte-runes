@@ -2,7 +2,7 @@ import type { Rule } from 'eslint';
 
 import { RUNE_NAMES } from '../constants';
 
-const messageId = 'noInitializedRuneExports';
+export const messageId = 'noInitializedRuneExports';
 
 export const rule: Rule.RuleModule = {
 	meta: {
@@ -58,7 +58,7 @@ export const rule: Rule.RuleModule = {
 							runeInitializers.has(localName)
 						) {
 							context.report({
-								node: specifier,
+								node,
 								messageId,
 							});
 						}
@@ -73,12 +73,12 @@ export const rule: Rule.RuleModule = {
 					RUNE_NAMES.includes(node.declaration.callee.name as (typeof RUNE_NAMES)[number])
 				) {
 					context.report({
-						node: node.declaration,
+						node: node,
 						messageId,
 					});
 				} else if (node.declaration.type === 'Identifier' && runeInitializers.has(node.declaration.name)) {
 					context.report({
-						node: node.declaration,
+						node,
 						messageId,
 					});
 				}
