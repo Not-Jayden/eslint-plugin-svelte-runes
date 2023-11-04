@@ -1,7 +1,8 @@
 import type { Rule } from 'eslint';
 
+import { SVELTE_COMPONENT_PATTERN, SVELTE_JS_OR_TS_PATTERN } from '../constants';
+
 import { getImportSource } from '../utils/getImportSource'; // Update the path accordingly
-import { SVELTE_COMPONENT_FILE_EXTENSION, SVELTE_JS_FILE_EXTENSION, SVELTE_TS_FILE_EXTENSION } from 'src/constants';
 
 const messageId = 'requireExtensions';
 
@@ -38,13 +39,12 @@ export const rule: Rule.RuleModule = {
 					}
 
 					// If the resolved path ends with .svelte, then it's a valid component
-					if (resolvedPath.endsWith(SVELTE_COMPONENT_FILE_EXTENSION)) {
+					if (resolvedPath.match(SVELTE_COMPONENT_PATTERN)) {
 						return;
 					}
 
 					if (
-						!resolvedPath.endsWith(SVELTE_JS_FILE_EXTENSION) &&
-						!resolvedPath.endsWith(SVELTE_TS_FILE_EXTENSION) // TODO: determine if the file can/should be able to end with .svelte.ts
+						!resolvedPath.match(SVELTE_JS_OR_TS_PATTERN) // TODO: determine if the file can/should be able to end with .svelte.ts
 					) {
 						context.report({
 							node: node.source,

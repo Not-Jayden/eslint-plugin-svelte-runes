@@ -13,8 +13,11 @@
 		"esModuleInterop": true,
 
 		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"]
+		},
 		"outDir": "./dist"
 	},
-	"include": ["src/**/*"],
-	"exclude": ["src/test/**/*"]
+	"include": ["src/**/*", "utils/createRule.ts"],
+	"exclude": ["tests/**/*"]
 }

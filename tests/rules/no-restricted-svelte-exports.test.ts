@@ -1,6 +1,6 @@
 import { RuleTester } from 'eslint';
 
-import { rule } from '../../src/rules/no-restricted-svelte-exports';
+import { rule } from '../../src/rules/no-external-svelte-exports';
 
 const ruleTester = new RuleTester({
 	parserOptions: { ecmaVersion: 2020, sourceType: 'module' },

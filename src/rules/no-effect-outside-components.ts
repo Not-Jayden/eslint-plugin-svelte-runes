@@ -1,4 +1,4 @@
-import { Rule } from 'eslint';
+import type { Rule } from 'eslint';
 
 import { EFFECT_RUNE, SVELTE_JS_FILE_EXTENSION, SVELTE_TS_FILE_EXTENSION } from '../constants';
 
@@ -14,6 +14,7 @@ export const rule: Rule.RuleModule = {
 		messages: {
 			[messageId]: '$effect rune should only allowed within .svelte component files',
 		},
+		schema: [],
 	},
 
 	create: (context) => {
