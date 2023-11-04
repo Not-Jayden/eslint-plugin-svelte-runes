@@ -4,7 +4,7 @@ import { RUNE_NAMES, SVELTE_FILE_EXTENSIONS } from '../constants';
 
 import { getPropertyValueIdentifier } from '../utils/getPropertyValueIdentifier';
 
-const messageId = 'noDirectRuneAssign';
+export const messageId = 'noDirectRuneAssign';
 
 export const rule: Rule.RuleModule = {
 	meta: {
