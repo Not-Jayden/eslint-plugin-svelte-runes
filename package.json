@@ -1,7 +1,7 @@
 {
 	"name": "eslint-plugin-svelte-runes",
 	"author": "Not-Jayden",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"main": "./lib/index.js",
 	"license": "MIT",
 	"files": [
