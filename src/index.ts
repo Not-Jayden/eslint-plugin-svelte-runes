@@ -1,12 +1,12 @@
 import type { ESLint, Rule } from 'eslint';
 
-import { rule as noExternalSvelteImportsRule } from 'src/rules/no-external-svelte-imports';
-import { rule as noExternalSvelteExportsRule } from 'src/rules/no-external-svelte-exports';
-import { rule as noExternalRuneCalls } from 'src/rules/no-external-rune-calls';
-import { rule as noEffectOutsideComponents } from 'src/rules/no-effect-outside-components';
-import { rule as noPropsOutsideComponents } from 'src/rules/no-props-outside-components';
-import { rule as noDirectRuneAssign } from 'src/rules/no-direct-rune-assign';
-import { rule as noInitializedRuneExports } from 'src/rules/no-initialized-rune-exports';
+import { rule as noExternalSvelteImportsRule } from './rules/no-external-svelte-imports';
+import { rule as noExternalSvelteExportsRule } from './rules/no-external-svelte-exports';
+import { rule as noExternalRuneCalls } from './rules/no-external-rune-calls';
+import { rule as noEffectOutsideComponents } from './rules/no-effect-outside-components';
+import { rule as noPropsOutsideComponents } from './rules/no-props-outside-components';
+import { rule as noDirectRuneAssign } from './rules/no-direct-rune-assign';
+import { rule as noInitializedRuneExports } from './rules/no-initialized-rune-exports';
 
 const rules = {
 	'no-external-svelte-imports': noExternalSvelteImportsRule,
