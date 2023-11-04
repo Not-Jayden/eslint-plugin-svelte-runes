@@ -7,7 +7,7 @@ module.exports = {
 		'plugin:eslint-plugin-n/recommended',
 	],
 	parser: '@typescript-eslint/parser',
-	plugins: ['@typescript-eslint', 'eslint-plugin-eslint-plugin', 'eslint-plugin-n'],
+	plugins: ['@typescript-eslint', 'eslint-plugin-eslint-plugin', 'eslint-plugin-n', 'eslint-plugin-svelte-runes'],
 	root: true,
 	rules: {
 		'@typescript-eslint/consistent-type-imports': 'error',
@@ -19,6 +19,7 @@ module.exports = {
 		],
 		// TODO: figure out how to get this to play nice with typescript
 		'n/no-missing-import': ['off'],
+		'eslint-plugin-svelte-runes/no-direct-rune-assign': 'error',
 	},
 	settings: {
 		'eslint-plugin-n': {},
