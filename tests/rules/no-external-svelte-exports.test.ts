@@ -1,16 +1,22 @@
 import { RuleTester } from 'eslint';
 
 import { messageId, rule } from '../../src/rules/no-external-svelte-exports';
+import * as helper from '../../src/utils/getImportSource';
+
+import { vi } from 'vitest';
 
 const ruleTester = new RuleTester({
 	parserOptions: { ecmaVersion: 2020, sourceType: 'module' },
+});
+
+vi.spyOn(helper, 'getImportSource').mockImplementation(() => {
+	return './myComponent.svelte.js';
 });
 
 ruleTester.run('no-restricted-svelte-exports', rule, {
 	valid: [
 		{
 			code: 'import something from "./notSvelteFile.js";',
-			filename: 'test.js',
 		},
 		{
 			code: 'import something from "./notSvelteFile.js";',

@@ -6,7 +6,7 @@ import { getImportSource } from '../utils/getImportSource';
 
 type ImportNode = Extract<Rule.Node, { type: 'ImportDeclaration' | 'ImportExpression' }>;
 
-const messageId = 'noRestrictedSvelteImports';
+export const messageId = 'noRestrictedSvelteImports';
 
 export const rule: Rule.RuleModule = {
 	meta: {
