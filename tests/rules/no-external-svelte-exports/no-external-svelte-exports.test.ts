@@ -10,7 +10,7 @@ const ruleTester = new RuleTester({
 });
 
 vi.spyOn(helper, 'getImportSource').mockImplementation(() => {
-	return './myComponent.svelte.js';
+	return './Component.svelte.js';
 });
 
 ruleTester.run('no-restricted-svelte-exports', rule, {
@@ -20,21 +20,21 @@ ruleTester.run('no-restricted-svelte-exports', rule, {
 		},
 		{
 			code: 'import something from "./notSvelteFile.js";',
-			filename: 'myComponent.svelte.js',
+			filename: 'Component.svelte.js',
 		},
 		{
-			code: 'import something from "./myComponent.svelte.js";',
-			filename: 'myComponent.svelte.js',
+			code: 'import something from "./Component.svelte.js";',
+			filename: 'Component.svelte.js',
 		},
 		{
-			code: 'import something from "./myComponent.svelte.ts";',
-			filename: 'myComponent.svelte',
+			code: 'import something from "./Component.svelte.ts";',
+			filename: 'Component.svelte',
 		},
 	],
 
 	invalid: [
 		{
-			code: 'export * from "./myComponent.svelte.js";',
+			code: 'export * from "./Component.svelte.js";',
 			filename: 'test.js',
 			errors: [
 				{
@@ -44,7 +44,7 @@ ruleTester.run('no-restricted-svelte-exports', rule, {
 			],
 		},
 		{
-			code: 'export * as MyComponent from "./myComponent.svelte.ts";',
+			code: 'export * as Component from "./Component.svelte.ts";',
 			filename: 'test.ts',
 			errors: [
 				{

@@ -11,13 +11,14 @@
 		"sourceMap": true,
 
 		"esModuleInterop": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
 
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"]
-		},
-		"outDir": "./dist"
+		}
 	},
-	"include": ["src/**/*", "utils/createRule.ts"],
+	"include": ["src/**/*", "utils/**/*"],
 	"exclude": ["tests/**/*"]
 }

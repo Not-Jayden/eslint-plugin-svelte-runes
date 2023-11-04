@@ -5,13 +5,16 @@
 	"main": "./src/index.ts",
 	"license": "MIT",
 	"files": [
-		"dist",
-		"src"
+		"lib"
 	],
+	"repository": {
+		"url": "https://www.github.com/Not-Jayden/eslint-plugin-svelte-runes",
+		"type": "git"
+	},
 	"scripts": {
 		"clean": "rimraf dist",
 		"prebuild": "npm run clean",
-		"build": "tsc",
+		"build": "tsc --outDir lib",
 		"preversion": "npm run build",
 		"postversion": "git push --follow-tags",
 		"test": "vitest",
