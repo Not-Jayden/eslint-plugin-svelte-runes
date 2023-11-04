@@ -2,7 +2,7 @@ import type { Rule } from 'eslint';
 
 import { EFFECT_RUNE, SVELTE_JS_FILE_EXTENSION, SVELTE_TS_FILE_EXTENSION } from '../constants';
 
-const messageId = 'noEffectOutsideComponents';
+export const messageId = 'noEffectOutsideComponents';
 
 export const rule: Rule.RuleModule = {
 	meta: {

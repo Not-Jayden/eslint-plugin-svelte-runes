@@ -4,7 +4,7 @@ import { RUNE_NAMES, SVELTE_FILE_EXTENSIONS } from '../constants';
 
 import { checkIsVariableDefinedForIdentifier } from '../utils/checkIsVariableDefinedForIdentifier';
 
-const messageId = 'noRestrictedSvelteRunes';
+export const messageId = 'noExternalRuneCalls';
 
 export const rule: Rule.RuleModule = {
 	meta: {

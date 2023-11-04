@@ -1,7 +1,7 @@
 import { RuleTester } from 'eslint';
 
-import { messageId, rule } from '../../src/rules/no-external-svelte-exports';
-import * as helper from '../../src/utils/getImportSource';
+import { messageId, rule } from '../../../src/rules/no-external-svelte-exports';
+import * as helper from '../../../src/utils/getImportSource';
 
 import { vi } from 'vitest';
 
