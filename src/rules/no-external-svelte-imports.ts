@@ -46,7 +46,7 @@ export const rule: Rule.RuleModule = {
 				importSource.match(SVELTE_JS_OR_TS_PATTERN)
 			) {
 				context.report({
-					node,
+					node: node.source,
 					messageId,
 				});
 			}

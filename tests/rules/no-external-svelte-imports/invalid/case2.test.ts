@@ -20,7 +20,7 @@ ruleTester.run('no-restricted-svelte-imports - invalid - case 2', rule, {
 			errors: [
 				{
 					messageId,
-					type: 'ImportDeclaration',
+					type: 'Literal',
 				},
 			],
 		},
