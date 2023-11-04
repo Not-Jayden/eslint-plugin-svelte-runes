@@ -32,7 +32,7 @@ Add `eslint-plugin-svelte-runes` to the plugins section of your `.eslintrc` conf
 
 ```json
 {
-	"plugins": ["eslint-plugin-svelte-runes"]
+    "plugins": ["eslint-plugin-svelte-runes"]
 }
 ```
 
@@ -44,7 +44,7 @@ This plugin ships with a `recommended` configuration that sets up all the provid
 
 ```json
 {
-	"extends": ["plugin:svelte-runes/recommended"]
+    "extends": ["plugin:svelte-runes/recommended"]
 }
 ```
 

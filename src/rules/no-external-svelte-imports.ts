@@ -1,5 +1,7 @@
 import type { Rule } from 'eslint';
 
+import { SVELTE_COMPONENT_PATTERN, SVELTE_JS_OR_TS_PATTERN } from 'src/constants';
+
 import { getImportSource } from '../utils/getImportSource';
 
 type ImportNode = Extract<Rule.Node, { type: 'ImportDeclaration' | 'ImportExpression' }>;
@@ -39,9 +41,9 @@ export const rule: Rule.RuleModule = {
 
 			// Check if current file is NOT a .svelte.js/ts file or .svelte file but trying to import from one
 			if (
-				!fileName.match(/\.svelte\.(js|ts)$/i) &&
-				!fileName.match(/\.svelte$/i) &&
-				importSource.match(/\.svelte\.(js|ts)$/i)
+				!fileName.match(SVELTE_JS_OR_TS_PATTERN) &&
+				!fileName.match(SVELTE_COMPONENT_PATTERN) &&
+				importSource.match(SVELTE_JS_OR_TS_PATTERN)
 			) {
 				context.report({
 					node,

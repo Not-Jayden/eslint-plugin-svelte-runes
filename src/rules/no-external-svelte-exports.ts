@@ -1,5 +1,7 @@
 import type { Rule } from 'eslint';
 
+import { SVELTE_JS_OR_TS_PATTERN } from 'src/constants';
+
 import { getImportSource } from '../utils/getImportSource';
 
 const messageId = 'noRestrictedSvelteExports';
@@ -37,7 +39,7 @@ export const rule: Rule.RuleModule = {
 				}
 
 				// Check if current file is NOT a .svelte.js/ts file but trying to export directly from one
-				if (!fileName.match(/\.svelte\.(js|ts)$/i) && exportSource.match(/\.svelte\.(js|ts)$/i)) {
+				if (!fileName.match(SVELTE_JS_OR_TS_PATTERN) && exportSource.match(SVELTE_JS_OR_TS_PATTERN)) {
 					context.report({
 						node: node.source,
 						messageId,
@@ -62,7 +64,7 @@ export const rule: Rule.RuleModule = {
 				}
 
 				// Check if current file is NOT a .svelte.js/ts file but trying to use wildcard export from one
-				if (!fileName.match(/\.svelte\.(js|ts)$/i) && exportSource.match(/\.svelte\.(js|ts)$/i)) {
+				if (!fileName.match(SVELTE_JS_OR_TS_PATTERN) && exportSource.match(SVELTE_JS_OR_TS_PATTERN)) {
 					context.report({
 						node: node.source,
 						messageId,

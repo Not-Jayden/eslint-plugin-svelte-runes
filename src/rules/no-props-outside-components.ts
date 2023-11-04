@@ -2,6 +2,8 @@ import { Rule } from 'eslint';
 
 import { PROPS_RUNE, SVELTE_JS_FILE_EXTENSION, SVELTE_TS_FILE_EXTENSION } from '../constants';
 
+const messageId = 'noPropsOutsideComponents';
+
 export const rule: Rule.RuleModule = {
 	meta: {
 		type: 'problem',
@@ -10,7 +12,7 @@ export const rule: Rule.RuleModule = {
 			category: 'Possible Errors',
 		},
 		messages: {
-			noRestrictedSveltePropsRune: 'Usage of the $props rune is only allowed within .svelte component files',
+			[messageId]: 'Usage of the $props rune is only allowed within .svelte component files',
 		},
 	},
 
@@ -26,7 +28,7 @@ export const rule: Rule.RuleModule = {
 				if (node.name === PROPS_RUNE) {
 					context.report({
 						node,
-						messageId: 'noRestrictedSveltePropsRune',
+						messageId,
 					});
 				}
 			},
