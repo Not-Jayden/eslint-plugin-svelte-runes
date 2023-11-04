@@ -1,12 +1,12 @@
 import { RuleTester } from 'eslint';
 
-import { rule } from '../../src/rules/no-external-svelte-exports';
+import { rule } from '../../src/rules/no-external-svelte-imports';
 
 const ruleTester = new RuleTester({
 	parserOptions: { ecmaVersion: 2020, sourceType: 'module' },
 });
 
-ruleTester.run('no-restricted-svelte-exports', rule, {
+ruleTester.run('no-restricted-svelte-imports', rule, {
 	valid: [
 		{
 			code: 'import something from "./notSvelteFile.js";',
@@ -28,7 +28,7 @@ ruleTester.run('no-restricted-svelte-exports', rule, {
 
 	invalid: [
 		{
-			code: 'export * from "./myComponent.svelte.js";',
+			code: 'import something from "./myComponent.svelte.js";',
 			filename: 'test.js',
 			errors: [
 				{
@@ -38,7 +38,7 @@ ruleTester.run('no-restricted-svelte-exports', rule, {
 			],
 		},
 		{
-			code: 'export * as MyComponent from "./myComponent.svelte.ts";',
+			code: 'import something from "./myComponent.svelte.ts";',
 			filename: 'test.ts',
 			errors: [
 				{

@@ -1,12 +1,12 @@
 import { RuleTester } from 'eslint';
 
-import { rule } from '../../src/rules/no-restricted-svelte-imports';
+import { messageId, rule } from '../../src/rules/no-external-svelte-exports';
 
 const ruleTester = new RuleTester({
 	parserOptions: { ecmaVersion: 2020, sourceType: 'module' },
 });
 
-ruleTester.run('no-restricted-svelte-imports', rule, {
+ruleTester.run('no-restricted-svelte-exports', rule, {
 	valid: [
 		{
 			code: 'import something from "./notSvelteFile.js";',
@@ -28,21 +28,21 @@ ruleTester.run('no-restricted-svelte-imports', rule, {
 
 	invalid: [
 		{
-			code: 'import something from "./myComponent.svelte.js";',
+			code: 'export * from "./myComponent.svelte.js";',
 			filename: 'test.js',
 			errors: [
 				{
-					messageId: 'forbidden',
+					messageId,
 					type: 'Literal',
 				},
 			],
 		},
 		{
-			code: 'import something from "./myComponent.svelte.ts";',
+			code: 'export * as MyComponent from "./myComponent.svelte.ts";',
 			filename: 'test.ts',
 			errors: [
 				{
-					messageId: 'forbidden',
+					messageId,
 					type: 'Literal',
 				},
 			],
