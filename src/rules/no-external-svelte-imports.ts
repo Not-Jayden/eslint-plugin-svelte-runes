@@ -1,6 +1,6 @@
 import type { Rule } from 'eslint';
 
-import { SVELTE_COMPONENT_PATTERN, SVELTE_JS_OR_TS_PATTERN } from 'src/constants';
+import { SVELTE_COMPONENT_PATTERN, SVELTE_JS_OR_TS_PATTERN } from '../constants';
 
 import { getImportSource } from '../utils/getImportSource';
 

@@ -22,7 +22,7 @@ const plugin = {
 	// TODO: generate meta from package.json
 	meta: {
 		name: 'eslint-plugin-svelte-runes',
-		version: '0.0.5',
+		version: '0.0.6',
 	},
 	rules,
 
