@@ -44,7 +44,7 @@ This plugin ships with a `recommended` configuration that sets up all the provid
 
 ```json
 {
-    "extends": ["plugin:svelte-runes/recommended"]
+    "extends": ["plugin:eslint-plugin-svelte-runes/recommended"]
 }
 ```
 
