@@ -9,6 +9,7 @@
 		"noImplicitAny": true,
 		"noUncheckedIndexedAccess": true,
 		"sourceMap": true,
+		"resolveJsonModule": true,
 
 		"esModuleInterop": true,
 		"noUnusedLocals": true,
