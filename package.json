@@ -2,13 +2,10 @@
 	"name": "eslint-plugin-svelte-runes",
 	"author": "Not-Jayden",
 	"version": "0.0.6",
-	"main": "./lib/index.js",
+	"main": ".dist/lib/index.js",
 	"license": "MIT",
 	"files": [
-		"lib",
-		"README.md",
-		"LICENSE",
-		"package.json"
+		"lib"
 	],
 	"repository": {
 		"url": "https://www.github.com/Not-Jayden/eslint-plugin-svelte-runes",
@@ -24,7 +21,7 @@
 	"scripts": {
 		"clean": "rimraf dist",
 		"prebuild": "npm run clean",
-		"build": "tsc --outDir lib",
+		"build": "tsc",
 		"preversion": "npm run build",
 		"postversion": "git push --follow-tags",
 		"test": "vitest",

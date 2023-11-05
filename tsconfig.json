@@ -10,6 +10,8 @@
 		"noUncheckedIndexedAccess": true,
 		"sourceMap": true,
 		"resolveJsonModule": true,
+		"outDir": "./lib",
+		"rootDir": "./src",
 
 		"esModuleInterop": true,
 		"noUnusedLocals": true,
