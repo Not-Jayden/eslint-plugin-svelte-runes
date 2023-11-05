@@ -1,7 +1,5 @@
 import type { ESLint, Rule } from 'eslint';
 
-import { name, version } from '../package.json';
-
 import { rule as noExternalSvelteImportsRule } from './rules/no-external-svelte-imports';
 import { rule as noExternalSvelteExportsRule } from './rules/no-external-svelte-exports';
 import { rule as noExternalRuneCalls } from './rules/no-external-rune-calls';
@@ -21,10 +19,6 @@ const rules = {
 } as const satisfies Record<string, Rule.RuleModule>;
 
 const plugin = {
-	meta: {
-		name,
-		version,
-	},
 	rules,
 
 	configs: {
