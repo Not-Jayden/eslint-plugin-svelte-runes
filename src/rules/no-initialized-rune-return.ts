@@ -1,18 +1,19 @@
 import type { Rule } from 'eslint';
 
 const RUNE_NAMES = ['$state', '$derived'];
-const messageIdReturn = 'noDirectRuneReturns';
 
-export const ruleReturn: Rule.RuleModule = {
+const messageId = 'noInitializedRuneReturn';
+
+export const rule: Rule.RuleModule = {
 	meta: {
 		type: 'problem',
 		docs: {
 			description:
-				'Disallow returning variables or values initialized with a Svelte rune CallExpression directly from functions.',
+				'Disallow returning variables or values initialized with a Svelte rune directly from functions.',
 			category: 'Possible Errors',
 		},
 		messages: {
-			[messageIdReturn]: 'Do not return values initialized with Svelte runes directly from functions.',
+			[messageId]: 'Do not return values initialized with Svelte runes directly from functions.',
 		},
 	},
 
@@ -44,7 +45,7 @@ export const ruleReturn: Rule.RuleModule = {
 						if (property.value.type === 'Identifier' && runeInitializers.has(property.value.name)) {
 							context.report({
 								node: property,
-								messageId: messageIdReturn,
+								messageId,
 							});
 						}
 					}

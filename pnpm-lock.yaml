@@ -30,8 +30,8 @@ devDependencies:
     specifier: ^16.2.0
     version: 16.2.0(eslint@8.52.0)
   eslint-plugin-svelte-runes:
-    specifier: ^0.0.9
-    version: 0.0.9
+    specifier: ^0.0.10
+    version: 0.0.10
   prettier:
     specifier: ^3.0.3
     version: 3.0.3
@@ -861,8 +861,8 @@ packages:
       semver: 7.5.4
     dev: true
 
-  /eslint-plugin-svelte-runes@0.0.9:
-    resolution: {integrity: sha512-MFXjMfHPO9CIRUwfwNBAfedGhz1d7DdfHoAyTf438l/yElsA0lTA5mw8HyMNoxKFBD0VOz9/2AwZh3fir+q2gA==}
+  /eslint-plugin-svelte-runes@0.0.10:
+    resolution: {integrity: sha512-uziN+PJ2nzRLwzp1ezKQEFkBwDPhxSAA2AXJcxSMvvM1JdRhcTwXz+hg+cPYA1nvQQZ+DhcSfZjCR5IV9E9oSA==}
     dev: true
 
   /eslint-scope@7.2.2:

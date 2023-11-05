@@ -4,7 +4,7 @@ import { SVELTE_JS_OR_TS_PATTERN } from '../constants';
 
 import { getImportSource } from '../utils/getImportSource';
 
-export const messageId = 'noRestrictedSvelteExports';
+export const messageId = 'noExternalSvelteExports';
 
 export const rule: Rule.RuleModule = {
 	meta: {

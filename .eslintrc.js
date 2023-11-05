@@ -25,6 +25,8 @@ module.exports = {
 		'svelte-runes/no-external-rune-calls': ['error'],
 		'svelte-runes/no-external-svelte-exports': 'error',
 		'svelte-runes/no-external-svelte-imports': 'error',
+		'svelte-runes/no-initialized-rune-exports': 'error',
+		'svelte-runes/no-initialized-rune-return': 'error',
 	},
 	settings: {
 		'eslint-plugin-n': {},

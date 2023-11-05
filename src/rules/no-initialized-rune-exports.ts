@@ -8,7 +8,7 @@ export const rule: Rule.RuleModule = {
 	meta: {
 		type: 'problem',
 		docs: {
-			description: 'Disallow the export of variables or values initialized with a Svelte rune CallExpression.',
+			description: 'Disallow the export of variables or values that have been initialized with Svelte runes.',
 			category: 'Possible Errors',
 		},
 		messages: {

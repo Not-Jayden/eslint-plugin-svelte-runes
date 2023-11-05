@@ -1,6 +1,6 @@
 import type { Rule } from 'eslint';
 
-type Configuration = 'recommended' | 'all';
+type Configuration = 'recommended';
 
 type RuleData = {
 	rule: Rule.RuleModule;
