@@ -2,10 +2,10 @@
 	"name": "eslint-plugin-svelte-runes",
 	"author": "Not-Jayden",
 	"version": "0.0.9",
-	"main": "dist/index.js",
+	"main": "lib/index.js",
 	"license": "MIT",
 	"files": [
-		"dist"
+		"lib"
 	],
 	"repository": {
 		"url": "https://www.github.com/Not-Jayden/eslint-plugin-svelte-runes",
@@ -37,7 +37,7 @@
 		"eslint": "8.52.0",
 		"eslint-plugin-eslint-plugin": "^5.1.1",
 		"eslint-plugin-n": "^16.2.0",
-		"eslint-plugin-svelte-runes": "^0.0.8",
+		"eslint-plugin-svelte-runes": "^0.0.9",
 		"prettier": "^3.0.3",
 		"rimraf": "^5.0.5",
 		"tsconfig-paths": "^4.2.0",
